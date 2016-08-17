@@ -14,7 +14,7 @@
 //         origin: window.location.origin
 //     } });
 
-    
+
 // -------------------new
 // Variables
 
