@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Songs & Lyrics</title>
+    <!--Boostrap's CSS-->
+    <link rel="stylesheet" type="text/css" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <!--Custom CSS-->
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+    
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '168059020289739',
+      xfbml      : true,
+      version    : 'v2.7'
+    });
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
+
+
+
+</head>
+
+<body>
+
+    <!--<div id="video"></div>-->
+
+
+
+
+
+
+
+    <div class="mui-navbar  mxm-navbar mui-navbar--top mui-navbar--home" data-reactid="5">
+        <div class="container " data-reactid="6">
+
+            <div class=" pull-right col-auto" data-reactid="21">
+                <div class="dropdown-container" data-reactid="27">
+                    <div class="mui-toolbar mui-toolbar--default mui-toolbar--left" data-reactid="28">
+                        <div class="mui-toolbar__item" data-reactid="29"><button type="link" title="Sign in" class="mui-button mui-button--link mui-button--lg mui-button--roundedBorders mui-button--gray mxm-login-button "
+                                shape="roundedBorders" data-reactid="30"><span class="mui-button__label" data-reactid="31">Sign in</span></button></div>
+                        <div class="mui-toolbar__item" data-reactid="32"><a type="link" href="/sign-up" title="Sign up" shape="roundedBorders" class="mui-button mui-button--link mui-button--lg mui-button--roundedBorders mui-button--orange"
+                                data-reactid="33"><span class="mui-button__label" data-reactid="34">Sign up</span></a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <div class="container" id="page-container">
+        <h1 id="app-name">Songs & Lyrics</h1>
+
+
+        <form>
+            <div class="container" id="search-container"><i title="search"></i>
+                <div><input id="search-box" type="text" placeholder="Type song title, artist or lyrics" autocapitalize="on" autocorrect="off"
+                        >
+
+                    <div class="btn-wrapper">
+                      
+                                   <button type="button" class="btn btn-info" id="search-btn">Search</button>
+                 <label class="btn btn-info" for="search-btn"> </label>
+
+                    </div>
+                </div>
+
+            </div>
+        </form>
+
+    </div>
+
+<!--Below is the search result-->
+
+<div class="container" id="page-container">
+     
+        <form>
+            <div class="container" id="search-result-container"><i title="search"></i>
+                <div>
+
+                   
+
+                    </div>
+                </div>
+
+            </div>
+        </form>
+
+    </div>
+
+
+    <!-- 
+            NB: You generally do not want to publically expose the server structure (eg. ./node_modules/...)
+            will sort that in later bootcamps with task-runners and the like.
+            For now this is just a demonstration.
+            Alternatively can use CDNs for bootstrap/jquery
+        -->
+
+    <!--jQuery Script-->
+    <script src="./node_modules/jquery/dist/jquery.min.js"></script>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="http://rochestb.github.io/jQuery.YoutubeBackground/src/jquery.youtubebackground.js"></script>
+
+    <!--Bootstrap Script-->
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+
+    <!--Custom Script-->
+    <script src="./js/basic.js"></script>
+
+</body>
+
+</html>
