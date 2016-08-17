@@ -23,6 +23,13 @@ $( "#search-btn" ).click(function() {
     sendSearchLyricsRequest(txt); 
 });
 
+$( "#share-btn" ).click(function() {
+  FB.ui({
+  method: 'share',
+  href: 'http://musicsearchapp.azurewebsites.net/',
+}, function(response){});
+});
+
 // sendSearchLyricsRequest
 
 

@@ -19,6 +19,12 @@ $("#search-btn").click(function () {
     var txt = $("#search-box").val();
     sendSearchLyricsRequest(txt);
 });
+$("#share-btn").click(function () {
+    FB.ui({
+        method: 'share',
+        href: 'http://musicsearchapp.azurewebsites.net/',
+    }, function (response) { });
+});
 // sendSearchLyricsRequest
 function sendSearchLyricsRequest(searchTxt) {
     $.ajax({
