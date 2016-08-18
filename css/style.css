@@ -1,127 +1,99 @@
-
-
 html, body {
-    height: 100%;
-}
+  height: 100%; }
 
-.jumbotron { 
-        background: url("http://c.fastcompany.net/multisite_files/codesign/imagecache/1280/article_feature/1280-coldplay-light-show.jpg") no-repeat center center ; color: #ffffff;
-      padding-top: 10%;
-      margin: 0;
+.jumbotron {
+  background: url("http://c.fastcompany.net/multisite_files/codesign/imagecache/1280/article_feature/1280-coldplay-light-show.jpg") no-repeat center center;
+  color: #ffffff;
+  padding-top: 10%;
+  margin: 0;
   min-height: 100%;
-height:auto !important; /* cross-browser */
-    height: 100%; /* cross-browser */
-    }
+  height: auto !important;
+  /* cross-browser */
+  height: 100%;
+  /* cross-browser */ }
 
-    .form-inline {
-        padding-top: 4%;
-    }
-
+.form-inline {
+  padding-top: 4%; }
 
 .container-fluid {
-
-    padding: 60px 50px;
-}
-
+  padding: 60px 50px; }
 
 .bg-grey {
-    background-color: #f6f6f6;
-}
+  background-color: #f6f6f6; }
 
-#search-result-container{
-    margin-top: 50px;
-}
+#search-result-container {
+  margin-top: 50px; }
 
 .thumbnail {
-    padding: 0 0 15px 0;
-    border: none;
-    border-radius: 0;
-    transition: box-shadow 0.5s;
-
-
-}
+  padding: 0 0 15px 0;
+  border: none;
+  border-radius: 0;
+  transition: box-shadow 0.5s; }
 
 .thumbnail:hover {
-    box-shadow: 5px 0px 40px rgba(0,0,0, .2);
-    border: 1px solid #40C4FF;
-}
+  box-shadow: 5px 0px 40px rgba(0, 0, 0, 0.2);
+  border: 1px solid #40C4FF; }
 
 .thumbnail img {
-    width: 100%;
-    height: 100%;
-    margin-bottom: 10px;
-}
+  width: 100%;
+  height: 100%;
+  margin-bottom: 10px; }
 
 .navbar {
-    margin-bottom: 0;
-    background-color:#40C4FF;
-    z-index: 9999;
-    border: 0;
-    font-size: 12px !important;
-    line-height: 1.42857143 !important;
-    letter-spacing: 4px;
-    border-radius: 0;
-}
+  margin-bottom: 0;
+  background-color: #40C4FF;
+  z-index: 9999;
+  border: 0;
+  font-size: 12px !important;
+  line-height: 1.42857143 !important;
+  letter-spacing: 4px;
+  border-radius: 0; }
 
 .navbar li a, .navbar .navbar-brand {
-    color: #fff !important;
-}
+  color: #fff !important; }
 
 .navbar-nav li a:hover, .navbar-nav li.active a {
-    color: #80D8FF !important;
-    background-color: #fff !important;
-}
+  color: #80D8FF !important;
+  background-color: #fff !important; }
 
 .navbar-default .navbar-toggle {
-    border-color: transparent;
-    color: #fff !important;
-}
+  border-color: transparent;
+  color: #fff !important; }
 
-#share-btn{
-cursor: pointer;
-}
-
-
+#share-btn {
+  cursor: pointer; }
 
 footer .glyphicon {
-    font-size: 20px;
-    margin-bottom: 20px;
-    color: #40C4FF;
-}
+  font-size: 20px;
+  margin-bottom: 20px;
+  color: #40C4FF; }
 
+.slideanim {
+  visibility: hidden; }
 
-.slideanim {visibility:hidden;}
 .slide {
-    /* The name of the animation */
-    animation-name: slide;
-    -webkit-animation-name: slide; 
-    /* The duration of the animation */
-    animation-duration: 1s; 
-    -webkit-animation-duration: 1s;
-    /* Make the element visible */
-    visibility: visible; 
-}
+  /* The name of the animation */
+  animation-name: slide;
+  -webkit-animation-name: slide;
+  /* The duration of the animation */
+  animation-duration: 1s;
+  -webkit-animation-duration: 1s;
+  /* Make the element visible */
+  visibility: visible; }
 
 /* Go from 0% to 100% opacity (see-through) and specify the percentage from when to slide in the element along the Y-axis */
 @keyframes slide {
-    0% {
-        opacity: 0;
-        -webkit-transform: translateY(70%);
-    } 
-    100% {
-        opacity: 1;
-        -webkit-transform: translateY(0%);
-    } 
-}
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(70%); }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0%); } }
+
 @-webkit-keyframes slide {
-    0% {
-        opacity: 0;
-        -webkit-transform: translateY(70%);
-    } 
-    100% {
-        opacity: 1;
-        -webkit-transform: translateY(0%);
-    }
-}
-
-
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(70%); }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0%); } }

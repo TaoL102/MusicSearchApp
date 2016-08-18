@@ -32,7 +32,7 @@ $(function () {
     $("#share-btn").click(function () {
         FB.ui({
             method: 'share',
-            href: 'http://musicsearchapp.azurewebsites.net/',
+            href: 'http://musicsearchapp.azurewebsites.net/'
         }, function (response) { });
     });
     // Method: Jquery Ajax: sendSearchLyricsRequest
