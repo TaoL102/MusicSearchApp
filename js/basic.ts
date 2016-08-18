@@ -18,6 +18,18 @@
 // -------------------new
 // Variables
 
+// Slide In Elements
+$(window).scroll(function() {
+  $(".slideanim").each(function(){
+    var pos = $(this).offset().top;
+
+    var winTop = $(window).scrollTop();
+    if (pos < winTop + 600) {
+      $(this).addClass("slide");
+    }
+  });
+});
+
 $( "#search-btn" ).click(function() {
   var txt = $("#search-box").val();
     sendSearchLyricsRequest(txt); 
@@ -70,28 +82,38 @@ artist_name=element.track.artist_name;
 
 console.log(element)
 
- var  p_track_name = document.createElement("p");
-        p_track_name.textContent = track_name;
-        p_track_name.id = track_name;
-        var  p_album_name = document.createElement("p");
-        p_album_name.textContent = album_name;
-        p_album_name.id = album_name;
-        var p_track_share_url = document.createElement("p");
-        p_track_share_url.textContent = track_share_url;
-        p_track_share_url.id = track_share_url;
-        var p_artist_name = document.createElement("p");
-        p_artist_name.textContent = artist_name;
-        p_artist_name.id = artist_name;
+var a_img=document.createElement("a");
+var div_Container=document.createElement("div");
+var div_Thumbnail=document.createElement("div");
+var img_album_coverart_350x350 = document.createElement("img");
+var  p_track_name = document.createElement("p");
+var strong_track_name=document.createElement("strong");
+var p_artist_name = document.createElement("p");
 
-        var img_album_coverart_350x350 = document.createElement("img");
-      img_album_coverart_350x350.setAttribute("src",album_coverart_350x350);
+
+img_album_coverart_350x350.setAttribute("src",album_coverart_350x350);
+img_album_coverart_350x350.setAttribute("alt",track_name);
+a_img.href=track_share_url;
+a_img.appendChild(img_album_coverart_350x350);
+strong_track_name.textContent = track_name;
+p_track_name.appendChild(strong_track_name);
+p_artist_name.textContent = artist_name;
+div_Thumbnail.className="thumbnail";
+div_Thumbnail.appendChild(a_img);
+div_Thumbnail.appendChild(strong_track_name);
+div_Thumbnail.appendChild(p_artist_name);
+div_Container.className="col-sm-4";
+div_Container.appendChild(div_Thumbnail);
+
+
+
+        // var  p_album_name = document.createElement("p");
+        // p_album_name.textContent = album_name;
+        
+     
    
 
-$("#search-result-container").append(p_track_name);
-$("#search-result-container").append(p_album_name);
-$("#search-result-container").append(p_track_share_url);
-$("#search-result-container").append(p_artist_name);
-$("#search-result-container").append(img_album_coverart_350x350);
+$("#search-result-container").append(div_Container);
 
 });
 
