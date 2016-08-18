@@ -1,4 +1,11 @@
 $(function () {
+    // define variables for html elements
+    var element_search_btn = $("#search-btn");
+    var element_search_box = $("#search-box");
+    var element_share_btn = $("#share-btn");
+    var element_search_result_container = $("#search-result-container");
+    var element_search_result_header = $("#header-result");
+    var element_search_result_div = $("#div-search-result");
     // Bootstrap script: for scrolling 
     $(window).scroll(function () {
         $(".slideanim").each(function () {
@@ -24,12 +31,12 @@ $(function () {
         }
     });
     // search button click event
-    $("#search-btn").click(function () {
-        var txt = $("#search-box").val();
+    element_search_btn.click(function () {
+        var txt = element_search_box.val();
         sendSearchLyricsRequest(txt);
     });
     // share button click event
-    $("#share-btn").click(function () {
+    element_share_btn.click(function () {
         FB.ui({
             method: 'share',
             href: 'http://musicsearchapp.azurewebsites.net/'
@@ -42,7 +49,7 @@ $(function () {
             data: {
                 apikey: "7412583d7195586a08b845bb5a933c1b",
                 q: searchTxt,
-                page_size: 5,
+                page_size: 10,
                 s_track_rating: "desc",
                 format: "jsonp",
                 callback: "jsonp_callback"
@@ -52,7 +59,8 @@ $(function () {
             jsonpCallback: 'jsonp_callback',
             contentType: 'application/json',
             success: function (data) {
-                $("#search-result-container").empty();
+                element_search_result_container.empty();
+                element_search_result_div.css("display", "block");
                 if (data != null) {
                     // Get info from api
                     var returnData = data.message.body.track_list;
@@ -65,6 +73,10 @@ $(function () {
                         track_name = element.track.track_name;
                         album_name = element.track.album_name;
                         album_coverart_350x350 = element.track.album_coverart_350x350;
+                        // Check if 350*350 pic exists, if not ,use 100*100 pic
+                        if (album_coverart_350x350 == "") {
+                            album_coverart_350x350 = element.track.album_coverart_100x100;
+                        }
                         track_share_url = element.track.track_share_url;
                         artist_name = element.track.artist_name;
                         console.log(element);
@@ -78,6 +90,8 @@ $(function () {
                         img_album_coverart_350x350.setAttribute("src", album_coverart_350x350);
                         img_album_coverart_350x350.setAttribute("alt", track_name);
                         a_img.href = track_share_url;
+                        img_album_coverart_350x350.style.width = "100%";
+                        img_album_coverart_350x350.style.height = "100%";
                         a_img.appendChild(img_album_coverart_350x350);
                         strong_track_name.textContent = track_name;
                         p_track_name.appendChild(strong_track_name);
@@ -87,25 +101,29 @@ $(function () {
                         div_Thumbnail.appendChild(strong_track_name);
                         div_Thumbnail.appendChild(p_artist_name);
                         div_Container.className = "col-sm-4";
+                        // div_Container.style.width="300px";
+                        // div_Container.style.height="300px";
                         div_Container.appendChild(div_Thumbnail);
-                        $("#search-result-container").append(div_Container);
+                        element_search_result_container.append(div_Container);
                     });
-                    $("#header-result").text("We have found those songs for you:");
+                    element_search_result_header.text("We have found those songs for you:");
                 }
                 else {
-                    $("#header-result").text("Sorry! Nothing found.");
+                    element_search_result_div.css("display", "block");
+                    element_search_result_header.text("Sorry! Nothing found.");
                 }
                 $('html, body').animate({
-                    scrollTop: $("#div-search-result").offset().top
+                    scrollTop: element_search_result_div.offset().top
                 }, 900);
                 window.location.href = "#div-search-result";
             },
             error: function (jqXHR, textStatus, errorThrown) {
-                $("#search-result-container").empty();
+                element_search_result_container.empty();
                 console.log(jqXHR);
                 console.log(textStatus);
                 console.log(errorThrown);
-                $("#header-result").text("Connection to MusixMatch API failed.");
+                element_search_result_div.css("display", "block");
+                element_search_result_header.text("Connection to MusixMatch API failed.");
             }
         });
     }
