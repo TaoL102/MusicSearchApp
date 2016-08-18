@@ -5,7 +5,7 @@ html, body {
 }
 
 .jumbotron { 
-        background: url("https://s.mxmcdn.net/site/images/hero-girl.jpg") no-repeat center center ; color: #ffffff;
+        background: url("http://c.fastcompany.net/multisite_files/codesign/imagecache/1280/article_feature/1280-coldplay-light-show.jpg") no-repeat center center ; color: #ffffff;
       padding-top: 10%;
       margin: 0;
   min-height: 100%;
@@ -28,6 +28,10 @@ height:auto !important; /* cross-browser */
     background-color: #f6f6f6;
 }
 
+#search-result-container{
+    margin-top: 50px;
+}
+
 .thumbnail {
     padding: 0 0 15px 0;
     border: none;
@@ -39,7 +43,7 @@ height:auto !important; /* cross-browser */
 
 .thumbnail:hover {
     box-shadow: 5px 0px 40px rgba(0,0,0, .2);
-    border: 1px solid #f4511e;
+    border: 1px solid #40C4FF;
 }
 
 .thumbnail img {
@@ -50,7 +54,7 @@ height:auto !important; /* cross-browser */
 
 .navbar {
     margin-bottom: 0;
-    background-color: #f4511e;
+    background-color:#40C4FF;
     z-index: 9999;
     border: 0;
     font-size: 12px !important;
@@ -64,7 +68,7 @@ height:auto !important; /* cross-browser */
 }
 
 .navbar-nav li a:hover, .navbar-nav li.active a {
-    color: #f4511e !important;
+    color: #80D8FF !important;
     background-color: #fff !important;
 }
 
@@ -82,7 +86,7 @@ cursor: pointer;
 footer .glyphicon {
     font-size: 20px;
     margin-bottom: 20px;
-    color: #f4511e;
+    color: #40C4FF;
 }
 
 

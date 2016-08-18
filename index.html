@@ -5,10 +5,24 @@
     <title>Songs & Lyrics</title>
     <!--Boostrap's CSS-->
     <link rel="stylesheet" type="text/css" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
+
     <!--Custom CSS-->
     <link rel="stylesheet" type="text/css" href="./css/style.css">
+
     <meta name="viewport" content="width=device-width, initial-scale=1">
-<script>
+
+    <!--jQuery Script-->
+    <script src="./node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+    <!--Bootstrap Script-->
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+
+    <!--Custom Script-->
+    <script src="./js/custom.js"></script>
+
+    <script>
+    // This script is for Facebook Sharing,from Facebook API
   window.fbAsyncInit = function() {
     FB.init({
       appId      : '168059020289739',
@@ -25,78 +39,51 @@
      fjs.parentNode.insertBefore(js, fjs);
    }(document, 'script', 'facebook-jssdk'));
 </script>
-
-
-
 </head>
 
 <body>
 
-
-<nav class="navbar navbar-default navbar-fixed-top">
-  <div class="container">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+    <!--Navigation Bar-->
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span> 
       </button>
-      <a class="navbar-brand" href="#">Logo</a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav navbar-right">
+                    <li> <a id="share-btn"> Share on Facebook</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!--Title-->
+    <div class="jumbotron text-center" id="main-div">
+        <h1>Songs & Lyrics</h1>
+
+        <!--Search Area-->
+        <form class="form-inline">
+            <input type="text" id="search-box" class="form-control input-lg" size="50" placeholder="Type song title, artist or lyrics"
+                autocapitalize="on" autocorrect="off">
+            <button type="button" id="search-btn" class="btn btn-info input-lg"><span class="glyphicon glyphicon-search"></span>Search</button>
+        </form>
     </div>
-    <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav navbar-right">
-       
-        <li> <a id="share-btn"> Share on Facebook</a></li>
-      </ul>
-    </div>
-  </div>
-</nav>
+    <div class="container-fluid text-center bg-grey slideanim" id="div-search-result">
+        <h2 id="header-result"></h2>
+        <div class="row text-center" id="search-result-container">
+        </div>
 
-
-
-
-<div class="jumbotron text-center">
-  <h1>Songs & Lyrics</h1> 
-  
-<form class="form-inline">
-    <input type="text"  id="search-box"  class="form-control input-lg" size="50" placeholder="Type song title, artist or lyrics" autocapitalize="on" autocorrect="off">
-    <button type="button" id="search-btn" class="btn btn-danger input-lg"><span class="glyphicon glyphicon-search"></span>Search</button>
-  </form>
-</div>
-<div class="container-fluid text-center bg-grey slideanim" >
-  <h2>Portfolio</h2>
-  <h4>What we have created</h4>
-  <div class="row text-center" id="search-result-container">
-    
-</div>
-
-<footer class="container-fluid text-center">
-  <a href="#myPage" title="To Top">
-    <span class="glyphicon glyphicon-chevron-up"></span>
-  </a>
-  <p>Bootstrap Theme Made By <a href="http://www.w3schools.com" title="Visit w3schools">www.w3schools.com</a></p> 
-</footer>
-
-
-    <!-- 
-            NB: You generally do not want to publically expose the server structure (eg. ./node_modules/...)
-            will sort that in later bootcamps with task-runners and the like.
-            For now this is just a demonstration.
-            Alternatively can use CDNs for bootstrap/jquery
-        -->
-
-    <!--jQuery Script-->
-    <script src="./node_modules/jquery/dist/jquery.min.js"></script>
-
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-    <script src="http://rochestb.github.io/jQuery.YoutubeBackground/src/jquery.youtubebackground.js"></script>
-
-    <!--Bootstrap Script-->
-    <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-
-    <!--Custom Script-->
-    <script src="./js/basic.js"></script>
-
+        <!--Footer-->
+        <footer class="container-fluid text-center">
+            <a href="#main-div" title="To Top">
+                <span class="glyphicon glyphicon-chevron-up"></span>
+            </a>
+            <p>powered by <a href="http://www.Musixmatch.com" title="Visit Musixmatch">www.Musixmatch.com</a></p>
+        </footer>
 </body>
 
 </html>
