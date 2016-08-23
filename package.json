@@ -1,7 +1,6 @@
 {
   "name": "musicsearchapp",
   "version": "1.0.0",
-  "description": "",
   "main": "gulpfile.js",
   "dependencies": {
     "bootstrap": "^3.3.7",
@@ -30,5 +29,7 @@
   "bugs": {
     "url": "https://github.com/TaoL102/MusicSearchApp/issues"
   },
-  "homepage": "https://github.com/TaoL102/MusicSearchApp#readme"
+  "homepage": "https://github.com/TaoL102/MusicSearchApp#readme",
+  "description": "",
+  "engines":{"node": "6.4.0"}
 }
