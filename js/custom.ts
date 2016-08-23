@@ -1,5 +1,4 @@
 $(function() {
-
 // define variables for html elements
 var element_search_btn=$("#search-btn");
 var element_search_box=$("#search-box");
